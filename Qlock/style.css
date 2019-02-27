@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Use display:table and display:table-cell
+so that we can use vertical-align:middle */
+body {
+  display: table;
+  background: #111;
+  color: #fff;
+}
+
+/*#clock { font-family: monospace; font-size: 1.75em; margin: 0 auto;  position: relative; }*/
+#small-clock { display: none; }
+#medium-clock { display: none; }
+#clock { font-size: 106px; }
+.clock { display: table-cell; vertical-align: middle; font-family: monospace; color: #222; }
+.row { text-align: center; }
+.cell { }
+.lit { color: #fff; }
+
+/* zoom levels and sizes
+  30%   = 76  x 48
+  40%   = 102 x 64
+  50%   = 128 x 80
+  60%   = 153 x 96
+  70%   = 179 x 112
+  80%   = 204 x 128
+  90%   = 230 x 144
+  100%  = 256 x 160
+
+  150%  = 384 x 240
+  160%  = 409 x 256
+  170%  = 435 x 272
+
+  200%  = 512 x 320
+*/
+
+@media (min-width:76px) and (max-width:101px) {
+  #small-clock { display: table-cell; font-size: 12px; }
+  #clock, #medium-clock { display: none; }
+}
+@media (min-width:102px) and (max-width:127px) {
+  #small-clock { display: table-cell; font-size: 14px; }
+  #clock, #medium-clock { display: none; }
+}
+@media (min-width:128px) and (max-width:152px) {
+  #small-clock { display: table-cell; font-size: 17px; }
+  #clock, #medium-clock { display: none; }
+}
+@media (min-width:153px) and (max-width:178px) {
+  #small-clock { display: table-cell; font-size: 19px; }
+  #clock, #medium-clock { display: none; }
+}
+@media (min-width:179px) and (max-width:203px) {
+  #medium-clock { display: table-cell; font-size: 17px; }
+  #clock, #small-clock { display: none; }
+}
+@media (min-width:204px) and (max-width:230px) {
+  #medium-clock { display: table-cell; font-size: 20px; }
+  #clock, #small-clock { display: none; }
+}
+@media (min-width:230px) and (max-width:255px) {
+  #medium-clock { display: table-cell; font-size: 22px; }
+  #clock, #small-clock { display: none; }
+}
+@media (min-width:256px) and (max-width:280px) {
+  /* 100%: 6 x 11*/
+  #clock { display: table-cell; font-size: 20px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 100%: 6 x 10*/
+  /*#clock { font-size: 24px; }*/
+}
+@media (min-width:281px) and (max-width:306px) {
+  /* 110%: 6 x 11*/
+  #clock { display: table-cell; font-size: 21px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 110%: 6 x 10*/
+  /*#clock { font-size: 28px; }*/
+}
+@media (min-width:307px) and (max-width:331px) {
+  /* 120%: 6 x 11*/
+  #clock { display: table-cell; font-size: 23px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 120%: 6 x 10*/
+  /*#clock { font-size: 28px; }*/
+}
+@media (min-width:332px) and (max-width:357px) {
+  /* 130%: 6 x 11*/
+  #clock { display: table-cell; font-size: 25px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 130%: 6 x 10*/
+  /*#clock { font-size: 30px; }*/
+}
+@media (min-width:358px) and (max-width:383px) {
+  /* 140%: 6 x 11*/
+  #clock { display: table-cell; font-size: 27px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 140%: 6 x 10*/
+  /*#clock { font-size: 31px; }*/
+}
+@media (min-width:384px) and (max-width:408px) {
+  /* 150%: 6 x 11*/
+  #clock { display: table-cell; font-size: 29px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 150%: 6 x 10*/
+  /*#clock { font-size: 35px; }*/
+}
+@media (min-width:409px) and (max-width:434px) {
+  /* 160%: 6 x 11*/
+  #clock { display: table-cell; font-size: 31px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 160%: 6 x 10*/
+  /*#clock { font-size: 35px; }*/
+}
+@media (min-width:435px) and (max-width:459px) {
+  /* 170%: 6 x 11*/
+  #clock { display: table-cell; font-size: 33px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 170%: 6 x 10*/
+  /*#clock { font-size: 39px; }*/
+}
+@media (min-width:460px) and (max-width:485px) {
+  /* 180%: 6 x 11*/
+  #clock { display: table-cell; font-size: 35px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 180%: 6 x 10*/
+  /*#clock { font-size: 40px; }*/
+}
+@media (min-width:486px) and (max-width:511px) {
+  /* 190%: 6 x 11*/
+  #clock { display: table-cell; font-size: 37px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 190%: 6 x 10*/
+  /*#clock { font-size: 44px; }*/
+}
+@media (min-width:512px) and (max-width:512px) {
+  /* 200%: 6 x 11*/
+  #clock { display: table-cell; font-size: 39px; }
+  #medium-clock, #small-clock { display: none; }
+  /* 200%: 6 x 10*/
+  /*#clock { font-size: 46px; }*/
+}

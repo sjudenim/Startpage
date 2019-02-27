@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget xmlns="http://www.w3.org/ns/widgets" version="1.2" defaultlocale="en" viewmodes="minimized">
+    <name>Mini Qlock</name>
+    <feature name="startpage clock">
+        <param name="url" value="http://qlocktwo.com" />
+    </feature>
+    <icon src="images/icon_64.png" />
+    <description xml:lang="en">This is a verbose clock based off the QlockTwo</description>
+</widget>
