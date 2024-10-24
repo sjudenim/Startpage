@@ -1,0 +1,119 @@
+:root {
+	--bgDay: hsl(0, 0%, 99%);
+	--bgNight: hsl(240, 4%, 10%);
+	--fgDay: hsl(60, 3%, 31%);
+	--fgDayShadow: hsla(213, 10%, 64%, .6);
+	--fgNight: hsl(210, 6%, 62%);
+	--fgNightShadow: hsla(213, 10%, 55%, 0.6);
+	--fgHiDay: hsl(180, 100%, 40%);
+	--fgHiNight: hsl(180, 100%, 40%);
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLTCom-UltLt';
+	src: url('fonts/HelveticaNeueLTCom-UltLt.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'HelveticaNeueLTCom-Md';
+	src: url('fonts/HelveticaNeueLTCom-Md.ttf') format('truetype');
+}
+
+html, body {height: 100%}
+
+body {
+	/* Firefox */
+	-moz-transition-property: background-color;
+	-moz-transition-duration: 1s;
+	/* WebKit */
+	-webkit-transition-property: background-color;
+	-webkit-transition-duration: 1s;
+	/* Standard */
+	transition-property: background-color;
+	transition-duration: 1s;
+	cursor: default;
+}
+
+/*Wrapper*/
+.main {
+	background: var(--bgDay);
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+}
+
+/* Sizing & Transition */
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+/*Theme switcher*/
+label {
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: transparent;
+	margin: 0;
+	position: fixed;
+	z-index: 1;
+}
+
+input#themeswitch {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+/* Clock */
+#clock {
+	font-family: "HelveticaNeueLTCom-UltLt", "Helvetica Neue", "Helvetica", "Segoe UI Light", sans-serif !important;
+	text-shadow: var(--fgDayShadow) 0 0 1px;
+	text-align: center;
+	font-size: 18vw;
+	color: var(--fgDay);
+	margin-top: 20vh;
+	position: relative;
+}
+
+#minutes {color: var(--fgHiDay)}
+
+/* Date */
+#today {
+	font-family: "HelveticaNeueLTCom-UltLt", "Helvetica Neue", "Helvetica", "Segoe UI Light", sans-serif !important;
+	font-weight: bolder;
+	text-align: center;
+	font-size: 6vh;
+	margin-top: 5px;
+	width: 100%;
+	color: var(--fgDay);
+	text-shadow: var(--fgDayShadow) 0 0 1px;
+}
+
+#date {color: var(--fgHiDay)}
+
+/* Night theme */
+input#themeswitch:checked+.main {background: var(--bgNight)}
+
+input#themeswitch:checked+.main #clock, input#themeswitch:checked+.main #today {color: var(--fgNight); text-shadow: var(--fgNightShadow) 0 0 1px}
+
+input#themeswitch:checked+.main #minutes, input#themeswitch:checked+.main #date {color: var(--fgHiNight)}
+
+/* Narrow sreen size */
+@media screen and (max-width: 600px) {
+	#clock {
+		display: grid;
+		font-size: 20vh;
+		margin-top: 5vh;
+	}
+}
